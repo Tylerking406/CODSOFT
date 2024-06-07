@@ -18,15 +18,31 @@ public class numberGame {
 
 
     public static void main(String[] args) {
-       
+        System.out.println(randomNumber);
         
         //Allow user to input a number
         System.out.println("###Welcome to the Number Game, you start this round with 5 attempts###");
         System.out.print("Enter your guess: ");
         int guess= input.nextInt();
         Round(guess, randomNumber);
-    
         
+        System.out.println("Do you want to continue(yes/no)?");
+        String choice = input.next().toLowerCase(); //store yes or no
+        boolean flag =stringToBoolean(choice);
+
+        while (flag) {
+            randomNumber = random.nextInt(100)+1; //new random for next round
+            System.out.println(randomNumber);
+            System.out.print("Enter your guess: ");
+            guess= input.nextInt();
+            Round(guess, randomNumber);
+
+            System.out.println("Do you want to continue(yes/no)?");
+            choice= input.next().toLowerCase(); //store yes or no
+             flag =stringToBoolean(choice);
+             
+        }
+
 
 
     } //end of main
@@ -52,5 +68,23 @@ public class numberGame {
             System.out.println("The guess is correct!!");
         else
             System.out.println("You run out of attempts");
+    }
+
+    public static boolean stringToBoolean(String flag){
+        boolean asBool;
+        switch (flag) {
+            case "yes":
+                asBool = true;
+                break;
+            
+            case "no":
+            asBool = true;
+            break;
+        
+            default:
+                asBool = false;
+                break;
+        }
+        return asBool;
     }
 }

@@ -11,6 +11,7 @@ public class numberGame {
     public static void main(String[] args) {
         
         //Allow user to input a number
+        System.out.println("###Welcome to the Number Game, you start this round with 5 attempts###");
         System.out.print("Enter your guess: ");
         try (Scanner input = new Scanner(System.in)) {
             int guess= input.nextInt();
@@ -24,12 +25,12 @@ public class numberGame {
             while(guess != randomNumber && (attempts>1)){
                 attempts--;  //decrement attempt
                 if (guess> randomNumber) {
-                    System.out.println("The guess is too high, please try again:");
+                    System.out.println("The guess is too high,you have "+attempts+" atempts remaing\n please try again:");
                     guess= input.nextInt();
                 }
    
                 else if( guess < randomNumber){
-                    System.out.println("The guess is too low, please try again:");
+                    System.out.println("The guess is too low,you have "+attempts+" atempts remaing\nplease try again:");
                     guess= input.nextInt();
                 }
    

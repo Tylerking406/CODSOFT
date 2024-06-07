@@ -21,7 +21,7 @@ public class numberGame {
         System.out.println(randomNumber);
         
         //Allow user to input a number
-        System.out.println("###Welcome to the Number Game, you start this round with 5 attempts###");
+        System.out.println("###Welcome to the Number Game, you start this round with "+attempts+" attempts###");
         System.out.print("Enter your guess: ");
         int guess= input.nextInt();
         Round(guess, randomNumber);
@@ -40,6 +40,13 @@ public class numberGame {
             System.out.println("Do you want to continue(yes/no)?");
             choice= input.next().toLowerCase(); //store yes or no
              flag =stringToBoolean(choice);
+             System.out.println(flag);
+
+             if (flag ==false) {
+                //give user score
+                //System.exit(0);
+                break;
+             }
              
         }
 
@@ -78,7 +85,7 @@ public class numberGame {
                 break;
             
             case "no":
-            asBool = true;
+            asBool = false;
             break;
         
             default:

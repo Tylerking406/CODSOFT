@@ -28,12 +28,13 @@ public class gradeCalc {
 
        
         //Finding the sum
-        int sum=0;
+        int totalMark=0;
         for (String marksString : subjectMarks) {
-            sum += Integer.parseInt(marksString);
+            totalMark += Integer.parseInt(marksString);
         }
 
-        System.out.println("The sum is: "+ sum);
+        double average_percentage =totalMark/subjectMarks.size();
+        System.out.printf("The sum is: "+ totalMark);
 
 
 
